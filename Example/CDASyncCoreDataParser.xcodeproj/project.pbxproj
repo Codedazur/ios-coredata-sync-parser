@@ -21,6 +21,10 @@
 		6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
+		636E9F0E1C5B89DC005DE23E /* CoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 636E9F0D1C5B89DC005DE23E /* CoreDataStack.m */; };
+		636E9F0F1C5B89DC005DE23E /* CoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 636E9F0D1C5B89DC005DE23E /* CoreDataStack.m */; };
+		63D4DD001C5BB82200DE0380 /* sync-coredata-parser.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 63D4DCFE1C5BB82100DE0380 /* sync-coredata-parser.xcdatamodeld */; };
+		63D4DD011C5BB82200DE0380 /* sync-coredata-parser.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 63D4DCFE1C5BB82100DE0380 /* sync-coredata-parser.xcdatamodeld */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
 		BDF8C35A42BA068D1A91AA8F /* Pods_CDASyncCoreDataParser_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B96012E621C0792C02925A6 /* Pods_CDASyncCoreDataParser_Example.framework */; };
 /* End PBXBuildFile section */
@@ -59,6 +63,9 @@
 		6003F5B9195388D20070C39A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6003F5BB195388D20070C39A /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
+		636E9F0C1C5B89DC005DE23E /* CoreDataStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataStack.h; sourceTree = "<group>"; };
+		636E9F0D1C5B89DC005DE23E /* CoreDataStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataStack.m; sourceTree = "<group>"; };
+		63D4DCFF1C5BB82200DE0380 /* sync-coredata-parser.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "sync-coredata-parser.xcdatamodel"; sourceTree = "<group>"; };
 		6FFB2467751B3315C412BF7F /* Pods-CDASyncCoreDataParser_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CDASyncCoreDataParser_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CDASyncCoreDataParser_Tests/Pods-CDASyncCoreDataParser_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		7039A32765B8521997FF0243 /* Pods-CDASyncCoreDataParser_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CDASyncCoreDataParser_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CDASyncCoreDataParser_Tests/Pods-CDASyncCoreDataParser_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -130,6 +137,8 @@
 		6003F593195388D20070C39A /* Example for CDASyncCoreDataParser */ = {
 			isa = PBXGroup;
 			children = (
+				636E9F0C1C5B89DC005DE23E /* CoreDataStack.h */,
+				636E9F0D1C5B89DC005DE23E /* CoreDataStack.m */,
 				6003F59C195388D20070C39A /* CDAAppDelegate.h */,
 				6003F59D195388D20070C39A /* CDAAppDelegate.m */,
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
@@ -137,6 +146,7 @@
 				6003F5A6195388D20070C39A /* CDAViewController.m */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
+				63D4DCFE1C5BB82100DE0380 /* sync-coredata-parser.xcdatamodeld */,
 			);
 			name = "Example for CDASyncCoreDataParser";
 			path = CDASyncCoreDataParser;
@@ -391,8 +401,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				6003F59E195388D20070C39A /* CDAAppDelegate.m in Sources */,
+				63D4DD001C5BB82200DE0380 /* sync-coredata-parser.xcdatamodeld in Sources */,
 				6003F5A7195388D20070C39A /* CDAViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
+				636E9F0E1C5B89DC005DE23E /* CoreDataStack.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -401,6 +413,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				6003F5BC195388D20070C39A /* Tests.m in Sources */,
+				63D4DD011C5BB82200DE0380 /* sync-coredata-parser.xcdatamodeld in Sources */,
+				636E9F0F1C5B89DC005DE23E /* CoreDataStack.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -614,6 +628,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		63D4DCFE1C5BB82100DE0380 /* sync-coredata-parser.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				63D4DCFF1C5BB82200DE0380 /* sync-coredata-parser.xcdatamodel */,
+			);
+			currentVersion = 63D4DCFF1C5BB82200DE0380 /* sync-coredata-parser.xcdatamodel */;
+			path = "sync-coredata-parser.xcdatamodeld";
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 6003F582195388D10070C39A /* Project object */;
 }
