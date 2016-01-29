@@ -1,0 +1,20 @@
+PODS:
+  - CDASyncCoreDataParser (0.1.0):
+    - CDASyncService
+  - CDASyncService (0.0.1)
+  - Kiwi (2.4.0)
+
+DEPENDENCIES:
+  - CDASyncCoreDataParser (from `../`)
+  - Kiwi
+
+EXTERNAL SOURCES:
+  CDASyncCoreDataParser:
+    :path: ../
+
+SPEC CHECKSUMS:
+  CDASyncCoreDataParser: ff992ec800de1e9c4ce4644f2586c5a063fdb9d3
+  CDASyncService: d1a6fc3eb821ff6df7e8d69494e01b340e6aa28d
+  Kiwi: f49c9d54b28917df5928fe44968a39ed198cb8a8
+
+COCOAPODS: 0.39.0

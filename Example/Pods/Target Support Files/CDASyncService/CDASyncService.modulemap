@@ -1,0 +1,6 @@
+framework module CDASyncService {
+  umbrella header "CDASyncService-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,1 @@
+../../../CDASyncService/Pod/Classes/Protocols/CDASyncModel.h

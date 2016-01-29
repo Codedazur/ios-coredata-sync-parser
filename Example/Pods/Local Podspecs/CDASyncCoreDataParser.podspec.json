@@ -1,0 +1,31 @@
+{
+  "name": "CDASyncCoreDataParser",
+  "version": "0.1.0",
+  "summary": "A short description of CDASyncCoreDataParser.",
+  "description": "",
+  "homepage": "https://github.com/<GITHUB_USERNAME>/CDASyncCoreDataParser",
+  "license": "MIT",
+  "authors": {
+    "tamarabernad": "tamara@codedazur.es"
+  },
+  "source": {
+    "git": "https://github.com/<GITHUB_USERNAME>/CDASyncCoreDataParser.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "7.0"
+  },
+  "requires_arc": true,
+  "source_files": "Pod/Classes/**/*",
+  "resource_bundles": {
+    "CDASyncCoreDataParser": [
+      "Pod/Assets/*.png"
+    ]
+  },
+  "frameworks": "CoreData",
+  "dependencies": {
+    "CDASyncService": [
+
+    ]
+  }
+}
