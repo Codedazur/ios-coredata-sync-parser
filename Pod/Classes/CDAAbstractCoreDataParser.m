@@ -23,7 +23,6 @@
  */
 
 #import "CDAAbstractCoreDataParser.h"
-#import "SEACoreDataStack.h"
 #import <objc/runtime.h>
 
 @interface CDAAbstractCoreDataParser()
@@ -63,6 +62,8 @@
  * @brief describes the conversions needed to do between internal and external data, for example NSNumber to NSString
  */
 @property (nonatomic, strong) NSArray *attributesConversions;
+
+@property (nonatomic, strong) Class<CDASyncCoreDataStack> coreDataStack;
 @end
 @implementation CDAAbstractCoreDataParser
 
@@ -143,7 +144,7 @@
                 }
                 storedIdIndex = [storedIds indexOfObject:inputUid];
                 if (storedIdIndex != NSNotFound) {
-                    storedObject = [SEACoreDataStack fetchEntity:self.entityName WithPredicate:[NSPredicate predicateWithFormat:@"uid == %@",inputUid] InContext:self.context];
+                    storedObject = [self.coreDataStack fetchEntity:self.entityName WithPredicate:[NSPredicate predicateWithFormat:@"uid == %@",inputUid] InContext:self.context];
                 }else{
                     storedObject = [self createObjectOfEntitiy:self.entityName];
                 }
@@ -267,7 +268,7 @@
 }
 - (NSManagedObjectContext *)context{
     if(!_context){
-        _context = [[SEACoreDataStack coreDataStack] independentManagedObjectContext];
+        _context = [self.coreDataStack independentManagedObjectContext];
     }
     return _context;
 }
@@ -290,11 +291,11 @@
 - (NSArray *)dataIncluded:(BOOL)included InArrayOfIds:(NSArray *)ids WithEntityName:(NSString *)entity{
     
     NSPredicate *predicate = included ? [NSPredicate predicateWithFormat:@"uid IN %@", ids]:[NSPredicate predicateWithFormat:@"NOT (uid IN %@)", ids];
-    return [SEACoreDataStack fetchEntities:entity WithSortKey:@"uid" Ascending:YES WithPredicate:predicate InContext:self.context];
+    return [self.coreDataStack fetchEntities:entity WithSortKey:@"uid" Ascending:YES WithPredicate:predicate InContext:self.context];
 }
 - (void)onManagedObjectContextSave:(NSNotification *)notification{
     dispatch_sync(dispatch_get_main_queue(), ^{
-        [[[SEACoreDataStack coreDataStack] managedObjectContext] mergeChangesFromContextDidSaveNotification:notification];
+        [[self.coreDataStack mainManagedObjectContext] mergeChangesFromContextDidSaveNotification:notification];
     });
 }
 @end

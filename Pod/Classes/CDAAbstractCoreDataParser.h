@@ -24,5 +24,6 @@
 
 #import <Foundation/Foundation.h>
 #import "CDASyncParserProtocol.h"
+#import "CDASyncCoreDataStack.h"
 @interface CDAAbstractCoreDataParser : NSObject<CDASyncParserProtocol>
 @end
