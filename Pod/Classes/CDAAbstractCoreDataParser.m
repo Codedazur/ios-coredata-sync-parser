@@ -164,6 +164,7 @@
     [self.context reset];
     self.finished = YES;
     [[NSNotificationCenter defaultCenter] removeObserver:self name:NSManagedObjectContextDidSaveNotification object:self.context];
+        completion(nil);//TODO inside the block?
     }];
 }
 
